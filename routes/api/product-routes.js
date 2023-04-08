@@ -19,10 +19,19 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  Product.findByPk(req.params.id, {
+    include: Category,
+    include: Tag,
+  }).then((data) => {
+    res.json(data);
+  });
 });
 
 // create new product
 router.post("/", (req, res) => {
+  Product.create(req.body).then((newProduct) => {
+    res.json(newProduct);
+  });
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -97,6 +106,13 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  }).then((deletedStatus) => {
+    res.json(deletedStatus);
+  });
 });
 
 module.exports = router;
