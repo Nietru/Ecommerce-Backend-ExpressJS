@@ -4,6 +4,13 @@
 
 This program is designed to track and keep the inventory information up to date for an Ecommerce merchant website.
 
+## User Story
+````
+AS A manager at an internet retail company
+I WANT a back end for my e-commerce website that uses the latest technologies
+SO THAT my company can compete with other e-commerce companies
+````
+
 ## Installation
 
 Node, Express, Sequelize, dotenv, SQL, and Insomnia
