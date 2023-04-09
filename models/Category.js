@@ -2,7 +2,6 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-// creates new sqlize model for category
 class Category extends Model {}
 
 Category.init(
@@ -11,8 +10,8 @@ Category.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
+      autoIncrement: true,
     },
     category_name: {
       type: DataTypes.STRING,
